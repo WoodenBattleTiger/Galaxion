@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvpupnslb6sk"]
+[gd_scene load_steps=6 format=3 uid="uid://dvpupnslb6sk"]
 
 [ext_resource type="PackedScene" uid="uid://bnveydrr7k051" path="res://assets/scenes/player.tscn" id="1_7o6fp"]
+[ext_resource type="Script" path="res://assets/scripts/enemy_manager.gd" id="2_kdvii"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tbjut"]
 sky_top_color = Color(0.459113, 0.531501, 0.632252, 1)
@@ -26,6 +27,17 @@ shadow_enabled = true
 environment = SubResource("Environment_5v216")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 72.9181, -44.3218)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 72, -64)
+fov = 90.0
 
 [node name="Player" parent="." instance=ExtResource("1_7o6fp")]
+
+[node name="EnemyManager" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -120)
+script = ExtResource("2_kdvii")
+
+[node name="MarchTimer" type="Timer" parent="EnemyManager"]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="EnemyManager/MarchTimer" to="EnemyManager" method="_on_march_timer_timeout"]

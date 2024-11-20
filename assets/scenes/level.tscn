@@ -40,4 +40,8 @@ script = ExtResource("2_kdvii")
 wait_time = 3.0
 autostart = true
 
+[node name="TickTimer" type="Timer" parent="EnemyManager"]
+autostart = true
+
 [connection signal="timeout" from="EnemyManager/MarchTimer" to="EnemyManager" method="_on_march_timer_timeout"]
+[connection signal="timeout" from="EnemyManager/TickTimer" to="EnemyManager" method="_on_tick_timer_timeout"]

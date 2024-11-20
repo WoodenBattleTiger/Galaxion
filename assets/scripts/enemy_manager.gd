@@ -2,6 +2,9 @@ extends Node3D
 
 var enemyShip1 = load("res://assets/scenes/enemy.tscn")
 var place = 0
+var flip = 0
+
+var enemy_material = load("res://assets/materials/enemy_color.tres")
 
 #-120, 0, -120 -- top left
 
@@ -23,8 +26,26 @@ func spawn_grid() -> void:
 			newEnemy.global_position = Vector3(-120 + 50 + (x * 15), 0, -120 + (z * 15))
 			
 
+func _on_tick_timer_timeout() -> void:
+	if flip == 0:
+		for enemy in get_children():
+			if enemy.get_node_or_null("enemy ship 1/switching meshes") != null:
+				var meshesToChange = enemy.get_node("enemy ship 1/switching meshes")
+				for mesh in meshesToChange.get_children():
+					mesh.set_surface_override_material(0, enemy_material)
+		flip = 1
+	else:
+		for enemy in get_children():
+			if enemy.get_node_or_null("enemy ship 1/switching meshes") != null:
+				var meshesToChange = enemy.get_node("enemy ship 1/switching meshes")
+				for mesh in meshesToChange.get_children():
+					mesh.set_surface_override_material(0, null)
+		flip = 0	
+		
+
+
 func _on_march_timer_timeout() -> void:
-	print(place)
+	#print(place)
 	
 	if place == 0:
 		var tween = get_tree().create_tween()

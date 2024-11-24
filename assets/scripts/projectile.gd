@@ -1,7 +1,7 @@
 extends Area3D
 
 
-const SPEED = 50.0
+const SPEED = 100.0
 
 var dir = 1 #1 up -1 down
 var velocity = 0

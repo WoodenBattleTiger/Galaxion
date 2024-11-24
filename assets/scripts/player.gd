@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 30.0
+const SPEED = 80.0
 const JUMP_VELOCITY = 4.5
 
 var play_mode = 0
@@ -9,13 +9,6 @@ var play_mode = 0
 var projectile = load("res://assets/scenes/projectile.tscn")
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	#if not is_on_floor():
-		#velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 		
 	if Input.is_action_just_pressed("space"):
 		shoot()

@@ -36,12 +36,110 @@ fov = 90.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -120)
 script = ExtResource("2_kdvii")
 
+[node name="Enemies" type="Node3D" parent="EnemyManager"]
+
+[node name="Slots" type="Node3D" parent="EnemyManager"]
+
+[node name="Slot1" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -120)
+
+[node name="Slot2" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -105)
+
+[node name="Slot3" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -90)
+
+[node name="Slot4" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, -120)
+
+[node name="Slot5" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, -105)
+
+[node name="Slot6" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, -90)
+
+[node name="Slot7" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -120)
+
+[node name="Slot8" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -105)
+
+[node name="Slot9" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -90)
+
+[node name="Slot10" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -120)
+
+[node name="Slot11" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -105)
+
+[node name="Slot12" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -90)
+
+[node name="Slot13" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -120)
+
+[node name="Slot14" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -105)
+
+[node name="Slot15" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -90)
+
+[node name="Slot16" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -120)
+
+[node name="Slot17" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -105)
+
+[node name="Slot18" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -90)
+
+[node name="Slot19" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -120)
+
+[node name="Slot20" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -105)
+
+[node name="Slot21" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -90)
+
+[node name="Slot22" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -120)
+
+[node name="Slot23" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -105)
+
+[node name="Slot24" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -90)
+
+[node name="Slot25" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -120)
+
+[node name="Slot26" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -105)
+
+[node name="Slot27" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -90)
+
+[node name="Slot28" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -120)
+
+[node name="Slot29" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -105)
+
+[node name="Slot30" type="Marker3D" parent="EnemyManager/Slots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -90)
+
 [node name="MarchTimer" type="Timer" parent="EnemyManager"]
 wait_time = 3.0
 autostart = true
 
 [node name="TickTimer" type="Timer" parent="EnemyManager"]
+wait_time = 0.75
 autostart = true
+
+[node name="LaunchTimer" type="Timer" parent="EnemyManager"]
 
 [connection signal="timeout" from="EnemyManager/MarchTimer" to="EnemyManager" method="_on_march_timer_timeout"]
 [connection signal="timeout" from="EnemyManager/TickTimer" to="EnemyManager" method="_on_tick_timer_timeout"]
+[connection signal="timeout" from="EnemyManager/LaunchTimer" to="EnemyManager" method="_on_launch_timer_timeout"]

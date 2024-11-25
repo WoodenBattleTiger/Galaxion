@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnveydrr7k051"]
+[gd_scene load_steps=5 format=3 uid="uid://bnveydrr7k051"]
 
 [ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_f7du8"]
 [ext_resource type="PackedScene" uid="uid://cntiy5p3cfptm" path="res://assets/models/player_ship/player_ship.glb" id="1_gttra"]
+[ext_resource type="PackedScene" uid="uid://ccybdm5so1dgf" path="res://assets/scenes/models/ship_cockpit.tscn" id="2_diosq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c4lx6"]
 size = Vector3(26.4011, 5.94525, 22.0027)
@@ -9,6 +10,13 @@ size = Vector3(26.4011, 5.94525, 22.0027)
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_f7du8")
+
+[node name="FirstPersonCamera" type="Camera3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.789825, 6.36799, 0.940289)
+
+[node name="ship_cockpit" parent="." instance=ExtResource("2_diosq")]
+transform = Transform3D(-4, 0, -6.03983e-07, 0, 4, 0, 6.03983e-07, 0, -4, 0, 0, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154816, 2.16299, 0.607544)

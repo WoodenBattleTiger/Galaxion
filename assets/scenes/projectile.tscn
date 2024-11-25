@@ -26,4 +26,5 @@ shape = SubResource("CapsuleShape3D_gkqnm")
 [node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler3D" to="." method="_on_screen_exited"]

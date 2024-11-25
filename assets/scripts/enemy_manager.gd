@@ -47,13 +47,18 @@ func launch_enemy() -> void:
 		tween_x.tween_property(enemy_to_launch, "position:x", -height, duration * 0.5).as_relative().set_ease(Tween.EASE_IN)
 		tween_x.tween_property(enemy_to_launch, "position:x", -height, duration * 0.5).as_relative().set_ease(Tween.EASE_OUT)
 		tween_x.tween_property(enemy_to_launch, "position:x", height, duration * 0.5).as_relative().set_ease(Tween.EASE_IN)
-
+		
+		#await tween_x.finished
 		await tween_z.finished
-		await tween_x.finished
+		
+		enemy_to_launch.reparent(get_node("/root/Level"), true)
 		
 		enemy_to_launch.global_position.z = -140
 		var return_tween = enemy_to_launch.create_tween()
-		return_tween.tween_property(enemy_to_launch, "global_position", $Slots.get_child(child_idx).position, 1.0)
+		return_tween.tween_property(enemy_to_launch, "global_position", $Slots.get_child(child_idx).position, 0.5).set_ease(Tween.EASE_OUT)
+		
+		await  return_tween.finished
+		enemy_to_launch.reparent($Enemies, true)
 	
 func _on_tick_timer_timeout() -> void:
 	if flip == 0:
@@ -95,7 +100,7 @@ func _on_march_timer_timeout() -> void:
 		place = 0
 
 func start_launch_timer() -> void:
-	$LaunchTimer.wait_time = randf_range(2.0, 5.0)
+	$LaunchTimer.wait_time = randf_range(3.0, 6.0)
 	$LaunchTimer.start()
 
 func _on_launch_timer_timeout() -> void:

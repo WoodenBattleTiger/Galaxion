@@ -12,6 +12,16 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("space"):
 		shoot()
+		
+	if Input.is_action_just_pressed("change_playmode"):
+		if play_mode == 0:
+			play_mode = 1
+			$ship_cockpit.visible = true
+			$FirstPersonCamera.set_current(true)
+		else:
+			play_mode = 0
+			$ship_cockpit.visible = false
+			$FirstPersonCamera.set_current(false)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -35,4 +45,5 @@ func shoot() -> void:
 		var newProjectile = projectile.instantiate()
 		get_tree().root.add_child(newProjectile)
 		newProjectile.global_position.x = self.global_position.x
+		newProjectile.global_position.z = self.global_position.z - 8
 		newProjectile.collision_mask = 2

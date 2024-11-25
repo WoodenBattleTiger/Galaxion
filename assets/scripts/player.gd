@@ -31,6 +31,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func shoot() -> void:
-	var newProjectile = projectile.instantiate()
-	get_tree().root.add_child(newProjectile)
-	newProjectile.global_position.x = self.global_position.x
+	if get_tree().root.get_node_or_null("Projectile") == null:
+		var newProjectile = projectile.instantiate()
+		get_tree().root.add_child(newProjectile)
+		newProjectile.global_position.x = self.global_position.x
+		newProjectile.collision_mask = 2

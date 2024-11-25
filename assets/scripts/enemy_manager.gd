@@ -21,8 +21,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("debug_action"):
-		launch_enemy()
+	#if Input.is_action_just_pressed("debug_action"):
+		#launch_enemy()
+	pass
 	
 func spawn_grid() -> void:
 	for slot in $Slots.get_children():
@@ -34,6 +35,8 @@ func launch_enemy() -> void:
 	if $Enemies.get_child_count() > 0:
 		var child_idx = randi_range(0, $Enemies.get_child_count() - 1)
 		var enemy_to_launch = $Enemies.get_child(child_idx)
+		
+		enemy_to_launch.start_firing()
 		
 		var tween_z = enemy_to_launch.create_tween()
 		tween_z.tween_property(enemy_to_launch, "position:z", 140, 2.0)

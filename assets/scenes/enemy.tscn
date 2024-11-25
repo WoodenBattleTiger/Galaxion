@@ -7,6 +7,7 @@
 size = Vector3(8.66409, 3.4375, 12.098)
 
 [node name="Enemy" type="Area3D"]
+collision_layer = 2
 script = ExtResource("1_anqpn")
 
 [node name="enemy ship 1" parent="." instance=ExtResource("1_hqogb")]
@@ -15,5 +16,8 @@ transform = Transform3D(-4.37114e-09, -0.1, -4.37114e-09, 0, -4.37114e-09, 0.1, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100052, -0.195313, 0.0490112)
 shape = SubResource("BoxShape3D_qga3t")
+
+[node name="FireTimer" type="Timer" parent="."]
+wait_time = 0.1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

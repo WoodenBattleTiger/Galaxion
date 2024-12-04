@@ -83,16 +83,16 @@ func _on_march_timer_timeout() -> void:
 	
 	if place == 0:
 		var tween = get_tree().create_tween()
-		tween.tween_property(self, "position", Vector3(-100, 0, -120), 1.5)
+		tween.tween_property(self, "position", Vector3(-80, 0, -120), 1.0)
 	elif place == 1:
 		var tween = get_tree().create_tween()
-		tween.tween_property(self, "position", Vector3(-70, 0, -120), 1.5)
+		tween.tween_property(self, "position", Vector3(-70, 0, -120), 1.0)
 	elif place == 2:
 		var tween = get_tree().create_tween()
-		tween.tween_property(self, "position", Vector3(-40, 0, -120), 1.5)
+		tween.tween_property(self, "position", Vector3(-60, 0, -120), 1.0)
 	elif place == 3:
 		var tween = get_tree().create_tween()
-		tween.tween_property(self, "position", Vector3(-70, 0, -120), 1.5)
+		tween.tween_property(self, "position", Vector3(-70, 0, -120), 1.0)
 	
 	if place < 3:
 		place += 1

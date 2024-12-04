@@ -4,17 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://cix60gxc61pxo" path="res://assets/scenes/models/enemy_1_ship.tscn" id="1_hqogb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qga3t"]
-size = Vector3(8.66409, 3.4375, 12.098)
+size = Vector3(5, 3.4375, 8)
 
 [node name="Enemy" type="Area3D"]
 collision_layer = 2
 script = ExtResource("1_anqpn")
 
 [node name="enemy ship 1" parent="." instance=ExtResource("1_hqogb")]
-transform = Transform3D(-4.37114e-09, -0.1, -4.37114e-09, 0, -4.37114e-09, 0.1, -0.1, 4.37114e-09, 1.91069e-16, 0, 0, 0)
+transform = Transform3D(-3.0598e-09, -0.07, -3.0598e-09, 0, -3.0598e-09, 0.07, -0.07, 3.0598e-09, 1.33748e-16, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100052, -0.195313, 0.0490112)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0679029, -0.195313, 1.14441e-05)
 shape = SubResource("BoxShape3D_qga3t")
 
 [node name="FireTimer" type="Timer" parent="."]

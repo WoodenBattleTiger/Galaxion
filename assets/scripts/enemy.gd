@@ -2,9 +2,15 @@ extends Area3D
 
 var firing = false
 var projectile = load("res://assets/scenes/projectile.tscn")
+var sfx_node
+var ui_node
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	sfx_node = get_tree().root.get_node("Level/SFX")
+	ui_node = get_tree().root.get_node("Level/ui")
 	pass # Replace with function body.
 
 
@@ -18,6 +24,9 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		#ship and player have collided, game over
+		sfx_node.stream = load("res://assets/audio/game_over.mp3")
+		sfx_node.play()
+		ui_node.get_node("GameOver").set_visible(true)
 		body.queue_free()
 		queue_free()
 

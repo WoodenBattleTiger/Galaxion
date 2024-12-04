@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://yiijcpojinj0"]
+
+[ext_resource type="Script" path="res://assets/scripts/arcade_player.gd" id="1_oql0j"]
+[ext_resource type="Texture2D" uid="uid://dasvicj2evegh" path="res://assets/materials/dot.png" id="2_fcb1y"]
+[ext_resource type="PackedScene" uid="uid://ccybdm5so1dgf" path="res://assets/scenes/models/ship_cockpit.tscn" id="2_ydfhk"]
+[ext_resource type="PackedScene" uid="uid://cntiy5p3cfptm" path="res://assets/models/player_ship/player_ship.glb" id="3_kr8qn"]
+[ext_resource type="AudioStream" uid="uid://dx2bd8hb3gs46" path="res://assets/audio/shoot.mp3" id="5_y1e5m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c4lx6"]
+size = Vector3(20, 5.94525, 17)
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_oql0j")
+
+[node name="FirstPersonCamera" type="Camera3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0665016, 5.07383, 4.94029)
+visible = false
+
+[node name="Dot" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.5
+offset_top = 25.0
+offset_right = 6.5
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fcb1y")
+expand_mode = 1
+
+[node name="ship_cockpit" parent="." instance=ExtResource("2_ydfhk")]
+transform = Transform3D(-4, 0, -6.03983e-07, 0, 4, 0, 6.03983e-07, 0, -4, 0.856327, -1.29416, 4)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0457342, 2.16299, 0.106194)
+shape = SubResource("BoxShape3D_c4lx6")
+
+[node name="player_ship" parent="." instance=ExtResource("3_kr8qn")]
+transform = Transform3D(-0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 0, 0, 0)
+
+[node name="SFX" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_y1e5m")
+attenuation_model = 3
+volume_db = -10.0

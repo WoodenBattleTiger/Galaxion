@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://cix60gxc61pxo"]
+[gd_scene load_steps=67 format=4 uid="uid://cix60gxc61pxo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13qso"]
 resource_name = "07_-_Default"
@@ -730,6 +730,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_herof")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tnggg"]
+albedo_color = Color(0.288518, 0.288518, 0.288518, 1)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_n8aos"]
 _surfaces = [{
 "aabb": AABB(-5.34954, -6.36827, 11.1097, 10.6991, 12.7365, 54.53),
@@ -1216,6 +1219,7 @@ skeleton = NodePath("")
 [node name="ChamferCyl2134_black mat for body_0" type="MeshInstance3D" parent="ChamferCyl2134"]
 mesh = SubResource("ArrayMesh_1sdcu")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_tnggg")
 
 [node name="Cylin3402" type="Node3D" parent="."]
 transform = Transform3D(-1.81809e-08, -3.18166e-08, -0.152513, -0.152513, 3.79283e-15, 1.81809e-08, 0, 0.152513, -3.18166e-08, -47.968, 1.92879, -6.26156)
